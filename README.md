@@ -1,2 +1,3 @@
-# igdb_report
+# IGDB Report
+
 Data integrity report for IGDB
