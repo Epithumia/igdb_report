@@ -194,12 +194,15 @@ class IGDB:
 
             update_queries = list()
 
-            # Two workarounds for fields that are not detected as LONG because they are empty.
+            # Three workarounds for fields that are not detected as LONG because they are empty or start with empty cells.
             update_queries.append(
                 "ALTER TABLE external_games ALTER COLUMN platform TYPE LONG"
             )
             update_queries.append(
                 "ALTER TABLE platform_version_release_dates ALTER COLUMN platform_version TYPE LONG"
+            )
+            update_queries.append(
+                "ALTER TABLE external_games ALTER COLUMN game_release_format TYPE LONG"
             )
 
             for endpoint in self.endpoints:
